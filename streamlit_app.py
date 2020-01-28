@@ -15,7 +15,7 @@ x_train, x_test = x_train / 255.0, x_test / 255.0
 x_train = x_train[..., tf.newaxis]
 x_test = x_test[..., tf.newaxis]
 
-training_ds_size = st.sidebar.slider("Training dataset size", 100, 1000, 500)
+training_ds_size = st.sidebar.slider("Training dataset size", 1, 400, 50)
 
 train_ds = list(tf.data.Dataset.from_tensor_slices(
     (x_train, y_train)).shuffle(10000).batch(32))[:training_ds_size]
